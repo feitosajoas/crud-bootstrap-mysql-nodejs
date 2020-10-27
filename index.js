@@ -10,7 +10,7 @@ const bodyParser = require('body-parser');
 const mysql = require('mysql');
 const app = express();
 
-//Create Connection
+//Criando a conexão com banco de dados
 const conn = mysql.createConnection({
     host: 'localhost',
     user: 'root',
@@ -44,7 +44,7 @@ app.get('/', (req, res) => {
     });
 });
 
-//route for insert data
+//Inserindo dados 
 app.post('/save', (req, res) => {
     let data = {product_name: req.body.product_name, product_price: req.body.product_price};
     let sql = "INSERT INTO product SET ?";
